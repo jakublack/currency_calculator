@@ -1,0 +1,150 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-image: url(../../img/handmadepaper.png);
+  font-family: 'Raleway', sans-serif;
+  color: #395b77; }
+
+.mainheader {
+  background-image: url(../../img/binding_dark.png);
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+section {
+  padding-top: 2em; }
+
+.box {
+  width: 1050px;
+  margin: 0 auto;
+  padding: 2em 0; }
+
+.header-style {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 3em; }
+
+.result {
+  background-color: #fff; }
+
+.text-result {
+  text-align: center;
+  font-size: 2.5em;
+  padding: 0.5em 0; }
+
+.text-count {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 0; }
+
+.short-info {
+  padding: 1em 0; }
+
+.wrap-table {
+  display: flex;
+  flex-direction: row; }
+
+.wrap-element {
+  display: block;
+  padding: 10px; }
+
+.top-element {
+  border: 1px solid #000; }
+
+.bottom-element {
+  border: 1px solid #000;
+  border-top: 0; }
+
+.left-border {
+  border-left: 0; }
+
+.currency {
+  float: right; }
+
+.main-size {
+  border: 1px solid #395b77;
+  border-radius: 10px; }
+
+.text-center {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5em; }
+
+.form-calc {
+  padding-top: 2em; }
+
+.all-form-calc {
+  display: flex;
+  justify-content: space-around; }
+
+.form-group {
+  display: flex;
+  flex-direction: column; }
+
+.text-form {
+  font-size: 1.5em;
+  padding: 0.5em 0;
+  text-align: center; }
+
+.amount-input {
+  height: 1.6em;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em; }
+
+.all-select {
+  height: 3em; }
+
+.main-btn {
+  width: 10em;
+  height: 2.2em;
+  border-radius: 5%;
+  font-size: 1em;
+  background-color: #B4BECF;
+  border-color: #B4BECF; }
+  .main-btn:hover {
+    background-color: #A2ABBA;
+    border-color: #A2ABBA;
+    cursor: pointer;
+    color: #fff; }
+
+.text-footer {
+  font-size: 0.7em;
+  text-align: center; }

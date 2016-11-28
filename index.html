@@ -1,14 +1,170 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>blank</title>
+    <title>Calc</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
+    <header class="mainheader">
+        <div class="box header-style ">
+            <h2>Exchange Me</h2>
+        </div>
+    </header>
+    <section>
+        <div class=" box main-size">
+            <h1 class="text-center">Currency calculator</h1>
+            <form class="form-calc">
+                <div class="all-form-calc">
+                    <div class="form-group">
+                        <label class="text-form">Amount:</label>
+                        <input type="number" name='amount' class='amount-input'>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-form" >From:</label>
+                        <select class='all-select'>
+                            <option value="100" data-currency="PLN">PLN (złoty)</option>
+                            <option value="101" data-currency="EUR">EUR (euro)</option>
+                            <option value="102" data-currency="USD">USD (dolar amerykański)</option>
+                            <option value="103" data-currency="CHF">CHF (frank szwajcarski)</option>
+                            <option value="104" data-currency="GBP">GPB (funt szterling)</option>
+                            <option value="105" data-currency="CAD">CAD (dolar kanadyński)</option>
+                            <option value="106" data-currency="JPY">JPY (jen)</option>
+                            <option value="107" data-currency="DKK">DKK (korona duńska)</option>
+                            <option value="108" data-currency="SEK">SEK (korona szewdzka)</option>
+                            <option value="109" data-currency="CZK">CZK (korona czeska)</option>
+                            <option value="110" data-currency="RUB">RUB (ruble rosyjski)</option>
+                        </select>
+                    </div>
+<!--
+                    <div class="form-group">
+                        <label class="text-form">Change</label>
+                        <button class="main-btn">Change</button>
+                    </div>
+-->
+                    <div class="form-group">
+                        <label class="text-form">On:</label>
+                        <select class='all-select'>
+                            <option value="100" data-currency="PLN">PLN (złoty)</option>
+                            <option value="101" data-currency="EUR">EUR (euro)</option>
+                            <option value="102" data-currency="USD">USD (dolar amerykański)</option>
+                            <option value="103" data-currency="CHF">CHF (frank szwajcarski)</option>
+                            <option value="104" data-currency="GBP">GPB (funt szterling)</option>
+                            <option value="105" data-currency="CAD">CAD (dolar kanadyński)</option>
+                            <option value="106" data-currency="JPY">JPY (jen)</option>
+                            <option value="107" data-currency="DKK">DKK (korona duńska)</option>
+                            <option value="108" data-currency="SEK">SEK (korona szewdzka)</option>
+                            <option value="109" data-currency="CZK">CZK (korona czeska)</option>
+                            <option value="110" data-currency="RUB">RUB (ruble rosyjski)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-form">Count</label>
+                        <button class="main-btn">Count</button>
+                    </div>
+                </div>
+            
+            </form>
+        </div>
+        <div class="box"> 
+            <div class="main-size result">
+                <h3 class="text-result">Resault</h3>
+                <div>
+                    <p class="text-count">Za XXXX waluty można kupić YYYY waluty </p>
+                </div>
+                <div>
+                    <p class="text-count">Stosunek cenowy </p>
+                </div>
+            </div>
+        </div>
+        <div class='box'>
+            <p class="short-info">Average Echange rate to PLN from Polish National Bank on data: <span class="dataToInput"></span></p>
+            <div class="wrap-table">
+                <div class="flex-table">
+                    <span class="wrap-element top-element">Currency</span>
+                    <span class="wrap-element bottom-element">Average Echange rate</span>
+                </div>
+                <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/EUR.png" alt='EUR'>
+                        <span class="currency">EUR</span>
+                    </span>
+                    <span class="EUR toChange wrap-element bottom-element left-border">EUR</span>
+                </div>
+                <div class="flex-table">
+                    <span class="wrap-element top-element left-border">
+                        <img src="icons/png/USA.png" alt='USA'>
+                        <span class="currency">USD</span>
+                    </span>
+                    <span class="USD toChange wrap-element bottom-element left-border">USD</span>
+                </div>
+                <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/CHF.png" alt='CHF'>
+                        <span class="currency">CHF</span>
+                    </span>
+                    <span class="CHF toChange wrap-element bottom-element left-border">CHF</span>
+                </div>
+                 <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/GBP.png" alt='GBP'>
+                        <span class="currency">GBP</span>
+                    </span>
+                    <span class="GBP toChange wrap-element bottom-element left-border">GBP</span>
+                </div>
+                 <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/CAD.png" alt='CAD'>
+                        <span class="currency">CAD</span>
+                    </span>
+                    <span class="CAD toChange wrap-element bottom-element left-border">CAD</span>
+                </div>
+                 <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/JPY.png" alt='JPY'>
+                        <span class="currency">JPY</span>
+                    </span>
+                    <span class="JPY toChange wrap-element bottom-element left-border">JPY</span>
+                </div>
+                 <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/DKK.png" alt='DKK'>
+                        <span class="currency">DKK</span>
+                    </span>
+                    <span class="DKK toChange wrap-element bottom-element left-border">DKK</span>
+                </div>
+                <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/SEK.png" alt='SEK'>
+                        <span class="currency">SEK</span>
+                    </span>
+                    <span class="SEK toChange wrap-element bottom-element left-border">SEK</span>
+                </div>
+                <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/CZK.png" alt='CZK'>
+                        <span class="currency">CZK</span>
+                    </span>
+                    <span class="CZK toChange wrap-element bottom-element left-border">CZK</span>
+                </div>
+                <div class="flex-table">
+                    <span class="flag wrap-element top-element left-border">
+                        <img src="icons/png/RUB.png" alt='RUB'>
+                        <span class="currency">RUB</span>
+                    </span>
+                    <span class="RUB toChange wrap-element bottom-element left-border">RUB</span>
+                </div>                   
+            </div>
+        </div>    
+    </section>
+    <footer class="box">
+    <p class="text-footer">Projekt końcowy wykonany przez Jakub Gawron &copy; 2016</p>
+    
+    </footer>
     
 </body>
 </html>

@@ -7,4 +7,5 @@ install.sh
 package.json
 node_modules
 gulpfile.js
+/scss/
 
