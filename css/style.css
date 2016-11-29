@@ -61,7 +61,10 @@ section {
   letter-spacing: 3px;
   font-size: 3em; }
 
-.result {
+.hide-result, .PLN {
+  display: none; }
+
+.box .main-size {
   background-color: #fff; }
 
 .text-result {
@@ -81,9 +84,18 @@ section {
   display: flex;
   flex-direction: row; }
 
+.flex-table {
+  width: 10%;
+  display: flex;
+  flex-direction: column; }
+
+.flex-table:first-child {
+  width: 23%; }
+
 .wrap-element {
   display: block;
-  padding: 10px; }
+  padding: 10px;
+  text-align: center; }
 
 .top-element {
   border: 1px solid #000; }
@@ -108,7 +120,7 @@ section {
   font-size: 2.5em; }
 
 .form-calc {
-  padding-top: 2em; }
+  padding: 2em 0; }
 
 .all-form-calc {
   display: flex;
@@ -122,6 +134,14 @@ section {
   font-size: 1.5em;
   padding: 0.5em 0;
   text-align: center; }
+
+.text-error-curency, .text-error-amount {
+  text-align: center;
+  color: #ff0000;
+  display: none; }
+
+.case-error, .show-result {
+  display: block; }
 
 .amount-input {
   height: 1.6em;
@@ -148,3 +168,9 @@ section {
 .text-footer {
   font-size: 0.7em;
   text-align: center; }
+
+.text-special {
+  font-weight: 700; }
+
+span {
+  height: 100%; }
