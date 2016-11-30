@@ -58,6 +58,7 @@ jQuery(document).ready(function(){
             else{
                 jQuery('.text-error-curency').removeClass('case-error')
             }
+        takeData(currencyFrom,currencyTo);
         // calculate the result and decimal to 2 place
         var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*100)/100;
         result = Math.round(amount * rate *100)/100;
@@ -66,6 +67,7 @@ jQuery(document).ready(function(){
         jQuery('.amount-input').text(amount + ' ' + currencyFrom);
         jQuery('.restul-input').text(result + ' ' + currencyTo);
         jQuery('.exchange-input').text('1  ' + currencyFrom + ' = ' + rate+ ' ' + currencyTo );
+        
         event.preventDefault();
     });//finish event
 }); // finish ready    
