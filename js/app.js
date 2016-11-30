@@ -33,15 +33,16 @@ jQuery(document).ready(function(){
         loadRate();
     
     // action on click to exchange currency
-    jQuery('.count-btn').on('click', function(event){
+    jQuery('.form-calc').on('submit', function(event){
         var amount = jQuery('.amount-input').val();
         var result = 0;
         var currencyFrom = jQuery('.currencyFrom :selected').data('currency');
         var currencyTo = jQuery('.currencyTo :selected').data('currency');
         //case for amoount<0
-            if (amount<0 || amount==''){
+            if (amount<=0 || amount==''){
                     jQuery('.text-error-amount').addClass('case-error');
                     jQuery('.hide-result').removeClass('show-result');
+                    jQuery('.chart').removeClass('show-result');
                     return false;
                 }
             else{
@@ -53,6 +54,7 @@ jQuery(document).ready(function(){
             if (currencyFrom == currencyTo){
                 jQuery('.text-error-curency').addClass('case-error');
                 jQuery('.hide-result').removeClass('show-result');
+                jQuery('.chart').removeClass('show-result');
                 return false;
             }
             else{
@@ -60,10 +62,11 @@ jQuery(document).ready(function(){
             }
         takeData(currencyFrom,currencyTo);
         // calculate the result and decimal to 2 place
-        var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*100)/100;
+        var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*10000)/10000;
         result = Math.round(amount * rate *100)/100;
         //innet results
-        jQuery('.hide-result').addClass('show-result');              
+        jQuery('.hide-result').addClass('show-result');  
+        jQuery('.chart').addClass('show-result');
         jQuery('.amount-input').text(amount + ' ' + currencyFrom);
         jQuery('.restul-input').text(result + ' ' + currencyTo);
         jQuery('.exchange-input').text('1  ' + currencyFrom + ' = ' + rate+ ' ' + currencyTo );

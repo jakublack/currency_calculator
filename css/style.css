@@ -61,7 +61,7 @@ body {
   letter-spacing: 3px;
   font-size: 3em; }
 
-.hide-result, .PLN {
+.hide-result, .PLN, .chart {
   display: none; }
 
 .box .main-size {

@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
         <script src="bower_components/chart.js/dist/Chart.min.js"></script>
         <script src="js/chart.js"></script>
         <script src="js/app.js"></script>
@@ -25,13 +26,13 @@
                     <div class="all-form-calc">
                         <div class="form-group">
                             <label class="text-form">Amount:</label>
-                            <input type="number" name='amount' class='amount-input'>
+                            <input type="number" name='amount' class='amount-input' value="2">
                         </div>
                         <div class="form-group">
                             <label class="text-form" >From:</label>
                             <select class='all-select currencyFrom'>
                                 <option data-currency="PLN">PLN (złoty)</option>
-                                <option data-currency="EUR">EUR (euro)</option>
+                                <option data-currency="EUR" selected>EUR (euro)</option>
                                 <option data-currency="USD">USD (dolar amerykański)</option>
                                 <option data-currency="CHF">CHF (frank szwajcarski)</option>
                                 <option data-currency="GBP">GPB (funt szterling)</option>
@@ -59,7 +60,7 @@
                                 <option data-currency="USD">USD (dolar amerykański)</option>
                                 <option data-currency="CHF">CHF (frank szwajcarski)</option>
                                 <option data-currency="GBP">GPB (funt szterling)</option>
-                                <option data-currency="CAD">CAD (dolar kanadyński)</option>
+                                <option data-currency="CAD" selected>CAD (dolar kanadyński)</option>
                                 <option data-currency="JPY">JPY (jen)</option>
                                 <option data-currency="DKK">DKK (korona duńska)</option>
                                 <option data-currency="SEK">SEK (korona szewdzka)</option>
@@ -79,7 +80,7 @@
             </div>
             <div class="box hide-result"> 
                 <div class="main-size ">
-                    <h3 class="text-result">Resault</h3>
+                    <h3 class="text-result">Result</h3>
                     <div>
                         <p class="text-count">For <span class="amount-input text-special"></span> you can buy  <span class="restul-input text-special"></span></p>
                     </div>
@@ -88,6 +89,9 @@
                     </div>
                 </div>
             </div>
+            <section class="box chart">
+                <canvas id="chart"></canvas>
+            </section>
             <div class='box'>
                 <p class='short-info'>Average Echange rate to PLN from Polish National Bank on data: <span class="dataToInput"></span></p>
                 <div class="wrap-table">
@@ -170,9 +174,7 @@
             </div>    
         </section>
         
-        <section class="box chart">
-           
-        </section>
+        
         <footer class="box">
             <p class="text-footer">Projekt końcowy wykonany przez Jakub Gawron &copy; 2016</p>
         </footer>
