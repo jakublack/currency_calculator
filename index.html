@@ -22,7 +22,7 @@
         <section class='main-content'>
             <div class=" box main-size">
                 <h1 class="text-center">Currency calculator</h1>
-                <form class="form-calc">
+                <div class="form-calc">
                     <div class="all-form-calc">
                         <div class="form-group">
                             <label class="text-form">Amount:</label>
@@ -31,41 +31,38 @@
                         <div class="form-group">
                             <label class="text-form" >From:</label>
                             <select class='all-select currencyFrom'>
-                                <option data-currency="PLN">PLN (złoty)</option>
-                                <option data-currency="EUR" selected>EUR (euro)</option>
-                                <option data-currency="USD">USD (dolar amerykański)</option>
-                                <option data-currency="CHF">CHF (frank szwajcarski)</option>
-                                <option data-currency="GBP">GPB (funt szterling)</option>
-                                <option data-currency="CAD">CAD (dolar kanadyński)</option>
-                                <option data-currency="JPY">JPY (jen)</option>
-                                <option data-currency="DKK">DKK (korona duńska)</option>
-                                <option data-currency="SEK">SEK (korona szewdzka)</option>
-                                <option data-currency="CZK">CZK (korona czeska)</option>
-                                <option data-currency="RUB">RUB (ruble rosyjski)</option>
+                                <option value = 'PLN' data-currency="PLN">PLN (złoty)</option>
+                                <option value = 'EUR' data-currency="EUR">EUR (euro)</option>
+                                <option value = 'USD' data-currency="USD">USD (dolar amerykański)</option>
+                                <option value = 'CHF' data-currency="CHF">CHF (frank szwajcarski)</option>
+                                <option value = 'GPB' data-currency="GBP" selected>GPB (funt szterling)</option>
+                                <option value = 'CAD' data-currency="CAD">CAD (dolar kanadyński)</option>
+                                <option value = 'JPY' data-currency="JPY">JPY (jen)</option>
+                                <option value = 'DKK' data-currency="DKK">DKK (korona duńska)</option>
+                                <option value = 'SEK' data-currency="SEK">SEK (korona szewdzka)</option>
+                                <option value = 'CZK' data-currency="CZK">CZK (korona czeska)</option>
+                                <option value = 'RUB' data-currency="RUB">RUB (ruble rosyjski)</option>
                             </select>
                         </div>
-    
-<!--
                         <div class="form-group">
                             <label class="text-form">Change</label>
                             <button class="main-btn change-btn">Change</button>
                         </div>
--->
     
                         <div class="form-group">
                             <label class="text-form">On:</label>
                             <select class='all-select currencyTo'>
-                                <option data-currency="PLN">PLN (złoty)</option>
-                                <option data-currency="EUR">EUR (euro)</option>
-                                <option data-currency="USD">USD (dolar amerykański)</option>
-                                <option data-currency="CHF">CHF (frank szwajcarski)</option>
-                                <option data-currency="GBP">GPB (funt szterling)</option>
-                                <option data-currency="CAD" selected>CAD (dolar kanadyński)</option>
-                                <option data-currency="JPY">JPY (jen)</option>
-                                <option data-currency="DKK">DKK (korona duńska)</option>
-                                <option data-currency="SEK">SEK (korona szewdzka)</option>
-                                <option data-currency="CZK">CZK (korona czeska)</option>
-                                <option data-currency="RUB">RUB (ruble rosyjski)</option>
+                                <option value = 'PLN' data-currency="PLN">PLN (złoty)</option>
+                                <option value = 'EUR' data-currency="EUR">EUR (euro)</option>
+                                <option value = 'USD' data-currency="USD">USD (dolar amerykański)</option>
+                                <option value = 'CHF' data-currency="CHF">CHF (frank szwajcarski)</option>
+                                <option value = 'GPB' data-currency="GBP">GPB (funt szterling)</option>
+                                <option value = 'CAD' data-currency="CAD" selected>CAD (dolar kanadyński)</option>
+                                <option value = 'JPY' data-currency="JPY">JPY (jen)</option>
+                                <option value = 'DKK' data-currency="DKK">DKK (korona duńska)</option>
+                                <option value = 'SEK' data-currency="SEK">SEK (korona szewdzka)</option>
+                                <option value = 'CZK' data-currency="CZK">CZK (korona czeska)</option>
+                                <option value = 'RUB' data-currency="RUB">RUB (ruble rosyjski)</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -73,8 +70,7 @@
                             <button class="main-btn count-btn">Count</button>
                         </div>
                     </div>
-
-                </form>
+                </div>
                 <div class="text-error-amount"><p>Entered amount should ge greater than 0.</p></div>
                 <div class="text-error-curency"><p>You can't exchange currency on this same currency.</p></div>
             </div>

@@ -1,7 +1,5 @@
 jQuery(document).ready(function(){
-    
 // function to compare code currency to my table with json file
-
     function searchCurrency(response){
                     
                     var array = response[0].rates;
@@ -16,7 +14,6 @@ jQuery(document).ready(function(){
                         } // for
                     }) // function
                 };//finish function searchCurrency
-    
     function loadRate() {
             $.ajax({
                     url: 'http://api.nbp.pl/api/exchangerates/tables/a/',
@@ -27,13 +24,11 @@ jQuery(document).ready(function(){
                 searchCurrency(response);    
             }).fail(function(error) {
                console.log(error);
-            }) // finish fail
-            
+            }) // finish fail    
     }; //finish loadRate
         loadRate();
-    
     // action on click to exchange currency
-    jQuery('.form-calc').on('submit', function(event){
+    jQuery('.count-btn').on('click', function(event){
         var amount = jQuery('.amount-input').val();
         var result = 0;
         var currencyFrom = jQuery('.currencyFrom :selected').data('currency');
@@ -48,8 +43,6 @@ jQuery(document).ready(function(){
             else{
                     jQuery('.text-error-amount').removeClass('case-error')
                 }
-
-        
         // add condition for the replacement of the same currency
             if (currencyFrom == currencyTo){
                 jQuery('.text-error-curency').addClass('case-error');
@@ -60,7 +53,15 @@ jQuery(document).ready(function(){
             else{
                 jQuery('.text-error-curency').removeClass('case-error')
             }
-        takeData(currencyFrom,currencyTo);
+        if (currencyFrom=='PLN'){
+            takeFirstPln(currencyTo);
+            }
+        else if (currencyTo =='PLN'){
+            takeSecondPln(currencyFrom);
+        }
+        else{
+           takeForeignData(currencyFrom,currencyTo); 
+        }
         // calculate the result and decimal to 2 place
         var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*10000)/10000;
         result = Math.round(amount * rate *100)/100;
@@ -70,7 +71,12 @@ jQuery(document).ready(function(){
         jQuery('.amount-input').text(amount + ' ' + currencyFrom);
         jQuery('.restul-input').text(result + ' ' + currencyTo);
         jQuery('.exchange-input').text('1  ' + currencyFrom + ' = ' + rate+ ' ' + currencyTo );
-        
         event.preventDefault();
     });//finish event
+    jQuery('.change-btn').on('click', function(event){
+        var changeFrom = jQuery('.currencyFrom').val();
+        var changeTo = jQuery('.currencyTo').val();
+        jQuery('.currencyTo').val(changeFrom);
+        jQuery('.currencyFrom').val(changeTo);
+    })
 }); // finish ready    
