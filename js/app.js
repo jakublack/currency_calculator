@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
                 };//finish function searchCurrency
     function loadRate() {
             $.ajax({
-                    url: 'http://api.nbp.pl/api/exchangerates/tables/a/',
+                    url: 'https://api.nbp.pl/api/exchangerates/tables/a/',
                     dataType: 'json'
             }).done(function(response){
                 // input data

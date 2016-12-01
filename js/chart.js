@@ -127,13 +127,13 @@ function takeForeignData(element1, element2, element3) {
     var currency2;
     var chartData;
             $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
+                url: 'https://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response1){
                 // input data
                 currency1=response1;
                     $.ajax({
-                    url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element2+'/last/'+element3+'/?format=json',
+                    url: 'https://api.nbp.pl/api/exchangerates/rates/a/'+element2+'/last/'+element3+'/?format=json',
                     dataType: 'json'
                     }).done(function(response2){
                         // input data
@@ -154,7 +154,7 @@ function takeFirstPln(element1, element3) {
     var currency;
     var chartData;
     $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
+                url: 'https://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response){
                 // input data
@@ -170,7 +170,7 @@ function takeSecondPln(element, element3){
     var currency;
     var chartData;
     $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element+'/last/'+element3+'/?format=json',
+                url: 'https://api.nbp.pl/api/exchangerates/rates/a/'+element+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response){
                 // input data
