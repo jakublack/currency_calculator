@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
         loadRate();
     // action on click to exchange currency
     jQuery('.count-btn').on('click', function(event){
-        jQuery('#chartDraw').empty();
+        
         var amount = jQuery('.amount-input').val();
         var result = 0;
         var currencyFrom = jQuery('.currencyFrom :selected').data('currency');
@@ -38,6 +38,8 @@ jQuery(document).ready(function(){
                 jQuery('.text-error-milion').addClass('case-error');
                 jQuery('.hide-result').removeClass('show-result');
                 jQuery('.chart').removeClass('show-result');
+                jQuery('.text-error-curency').removeClass('case-error')
+
                 return false;
             }
         //case for amoount<0
@@ -45,6 +47,8 @@ jQuery(document).ready(function(){
                     jQuery('.text-error-amount').addClass('case-error');
                     jQuery('.hide-result').removeClass('show-result');
                     jQuery('.chart').removeClass('show-result');
+                    jQuery('.text-error-milion').removeClass('case-error');
+                    jQuery('.text-error-curency').removeClass('case-error')
                     return false;
                 }
             else{
@@ -55,6 +59,7 @@ jQuery(document).ready(function(){
                 jQuery('.text-error-curency').addClass('case-error');
                 jQuery('.hide-result').removeClass('show-result');
                 jQuery('.chart').removeClass('show-result');
+                jQuery('.text-error-milion').removeClass('case-error');
                 
                 return false;
             }
@@ -62,7 +67,8 @@ jQuery(document).ready(function(){
                 jQuery('.text-error-curency').removeClass('case-error');
                 jQuery('.text-error-milion').removeClass('case-error');
             }
-            drawTheChart(currencyFrom,currencyTo,20)
+            jQuery("button[value='60']").prop('disabled', true);
+            drawTheChart(currencyFrom,currencyTo,60)
             
         // calculate the result and decimal to 2 place and rate to 4 place
         var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*10000)/10000;
@@ -74,13 +80,18 @@ jQuery(document).ready(function(){
         jQuery('.restul-input').text(result + ' ' + currencyTo);
         jQuery('.exchange-input').text('1  ' + currencyFrom + ' = ' + rate+ ' ' + currencyTo );
 
+        // event to take from NBP data for num of days
         jQuery('.main-content').on('click','.range-btn',function(event){
+            jQuery('.range-btn').prop('disabled', false);
+            jQuery(this).prop('disabled', true);
             var numDay =jQuery(this).val();
             drawTheChart(currencyFrom,currencyTo,numDay);
         event.preventDefault;
     })
         event.preventDefault();
     });//finish event
+    
+    // event to switch the currency betwen choice
     jQuery('.change-btn').on('click', function(event){
         var changeFrom = jQuery('.currencyFrom').val();
         var changeTo = jQuery('.currencyTo').val();

@@ -93,9 +93,13 @@ function countChart(curFrom,curTo){
     return chartData;
 } 
 // print  countChart
+var scatterChart;
 function printChart(dataChart){
+    if(scatterChart){
+        scatterChart.destroy();
+    }
     var ctx =  document.getElementById('chartDraw').getContext('2d');
-    var scatterChart = new Chart(ctx, {
+    scatterChart = new Chart(ctx, {
         type: 'line',
         data: dataChart,
         options: {
@@ -104,6 +108,7 @@ function printChart(dataChart){
                      type: 'time',
                         time: {
                             unit: 'day',
+                            unitStepSize: 5,
                             displayFormats: {
                                     'millisecond': 'll',
                                     'second': 'll',
@@ -114,7 +119,6 @@ function printChart(dataChart){
                                     'month': 'll',
                                     'quarter': 'll',
                                     'year': 'll'
-
                             }
                         }
                 }]
