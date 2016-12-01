@@ -1,11 +1,10 @@
 .idea
 *.*~
-/bower_components/
+
 node_modules
+bower_components
 install.sh
 node_modules
 /scss/
-<<<<<<< HEAD
 
-=======
 
