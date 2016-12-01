@@ -22,7 +22,7 @@ function countOneChart(currency){
                 borderColor: 'rgba(57,91,119,1)',
                 pointBorderColor: 'rgba(57,91,119,1)',
                 pointBackgroundColor: 'rgba(57,91,119,1)',
-                lineTension: 1,
+                lineTension: 0.1,
                 pointHoverRadius: 8,
                 spanGaps: false,
                 data: dataChart
