@@ -1,11 +1,8 @@
 .idea
 *.*~
 node_modules
-bower.json
 install.sh
-package.json
 node_modules
-gulpfile.js
 /scss/
 /d3/
 
