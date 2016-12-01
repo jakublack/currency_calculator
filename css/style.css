@@ -41,7 +41,7 @@ body {
   color: #395b77; }
 
 .mainheader {
-  background-image: url(../../img/binding_dark.png);
+  background-color: #395b77;
   height: 100px;
   display: flex;
   justify-content: flex-start;
@@ -135,7 +135,7 @@ body {
   padding: 0.5em 0;
   text-align: center; }
 
-.text-error-curency, .text-error-amount {
+.text-error-curency, .text-error-amount, .text-error-milion {
   text-align: center;
   color: #ff0000;
   display: none; }
@@ -157,11 +157,12 @@ body {
   height: 2.2em;
   border-radius: 5%;
   font-size: 1em;
-  background-color: #B4BECF;
-  border-color: #B4BECF; }
+  background-color: #395b77;
+  border-color: #395b77;
+  color: #fff; }
   .main-btn:hover {
-    background-color: #A2ABBA;
-    border-color: #A2ABBA;
+    background-color: #273F53;
+    border-color: #273F53;
     cursor: pointer;
     color: #fff; }
 
@@ -174,3 +175,10 @@ body {
 
 span {
   height: 100%; }
+
+.all-range-bth {
+  display: flex;
+  justify-content: center; }
+
+.range-btn {
+  margin: 0 5px; }

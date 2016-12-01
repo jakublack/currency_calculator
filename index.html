@@ -5,7 +5,6 @@
         <title>Calc</title>
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/moment/moment.js"></script>
         <script src="bower_components/chart.js/dist/Chart.min.js"></script>
@@ -73,6 +72,7 @@
                 </div>
                 <div class="text-error-amount"><p>Entered amount should ge greater than 0.</p></div>
                 <div class="text-error-curency"><p>You can't exchange currency on this same currency.</p></div>
+                <div class="text-error-milion"><p>The amount should be less then 1 mln.</p></div>
             </div>
             <div class="box hide-result"> 
                 <div class="main-size ">
@@ -86,7 +86,13 @@
                 </div>
             </div>
             <section class="box chart">
-                <canvas id="chart"></canvas>
+                <canvas id="chartDraw"></canvas>
+                <div class='all-range-bth'>
+                    <button class="main-btn range-btn" value='20'> 1 month</button>
+                    <button class="main-btn range-btn" value='60'> 3 months</button>
+                    <button class="main-btn range-btn" value='120'> 6 months</button>
+<!--                    <button class="main-btn range-btn" value='240'> 12 months</button>-->
+                </div>
             </section>
             <div class='box'>
                 <p class='short-info'>Average Echange rate to PLN from Polish National Bank on data: <span class="dataToInput"></span></p>
