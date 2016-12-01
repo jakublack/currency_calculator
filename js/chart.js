@@ -6,6 +6,8 @@ function countOneChart(currency){
     for (i=0;i<element.length;i++){
         var newData = (element[i].effectiveDate).split('-');
         var DataChart = new Date(newData[0], newData[1]-1, newData[2]);
+       
+            
             var tmpData={
                 y: Math.round(1/element[i].mid*10000)/10000,
                 x: DataChart
@@ -20,7 +22,7 @@ function countOneChart(currency){
                 borderColor: 'rgba(57,91,119,1)',
                 pointBorderColor: 'rgba(57,91,119,1)',
                 pointBackgroundColor: 'rgba(57,91,119,1)',
-                lineTension: 0.1,
+                lineTension: 1,
                 pointHoverRadius: 8,
                 spanGaps: false,
                 data: dataChart
@@ -62,17 +64,17 @@ function countChart(curFrom,curTo){
     var elementFrom = jQuery(curFrom.rates);
     var elementTo = jQuery(curTo.rates);
     var dataChart = [];
-    var chartLabels = [];
     for (i=0;i<elementFrom.length;i++){
             var newData = (elementFrom[i].effectiveDate).split('-');
             var DataChart = new Date(newData[0], newData[1]-1, newData[2]);
-            //var dataToLable = moment(elementFrom[i].effectiveDate);
+        
             var tmpData={
                 y: Math.round(elementFrom[i].mid/elementTo[i].mid*10000)/10000,
                 x: DataChart
             }
+            
         dataChart.push(tmpData);
-        //chartLabels.push(elementFrom[i].effectiveDate);
+        
     }    
     var chartData =  {
             labels : chartData,
@@ -89,13 +91,12 @@ function countChart(curFrom,curTo){
             }]
         };
     return chartData;
-} // finish countChart
+} 
+// print  countChart
 function printChart(dataChart){
-    var ctx =  document.getElementById('chart').getContext('2d');
-    
+    var ctx =  document.getElementById('chartDraw').getContext('2d');
     var scatterChart = new Chart(ctx, {
         type: 'line',
-        
         data: dataChart,
         options: {
             scales:{
@@ -104,7 +105,15 @@ function printChart(dataChart){
                         time: {
                             unit: 'day',
                             displayFormats: {
-                                'day': 'MMM DD',
+                                    'millisecond': 'll',
+                                    'second': 'll',
+                                    'minute': 'll',
+                                    'hour': 'll',
+                                    'day': 'll',
+                                    'week': 'll',
+                                    'month': 'll',
+                                    'quarter': 'll',
+                                    'year': 'll'
 
                             }
                         }
@@ -113,18 +122,18 @@ function printChart(dataChart){
         }
     });
 }
-function takeForeignData(element1, element2) {
+function takeForeignData(element1, element2, element3) {
     var currency1;    
     var currency2;
     var chartData;
             $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/30/?format=json',
+                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response1){
                 // input data
                 currency1=response1;
                     $.ajax({
-                    url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element2+'/last/30/?format=json',
+                    url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element2+'/last/'+element3+'/?format=json',
                     dataType: 'json'
                     }).done(function(response2){
                         // input data
@@ -141,11 +150,11 @@ function takeForeignData(element1, element2) {
             }) // finish fail
         return chartData;
     }; //finish takeForeignData
-function takeFirstPln(element1) {
+function takeFirstPln(element1, element3) {
     var currency;
     var chartData;
     $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/30/?format=json',
+                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element1+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response){
                 // input data
@@ -154,14 +163,14 @@ function takeFirstPln(element1) {
                 printChart(chartData);
                 }).fail(function(error) {
                 console.log(error);
-            }) // finish fail
+                }) // finish fail
     
 }
-function takeSecondPln(element){
+function takeSecondPln(element, element3){
     var currency;
     var chartData;
     $.ajax({
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element+'/last/30/?format=json',
+                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+element+'/last/'+element3+'/?format=json',
                 dataType: 'json'
                 }).done(function(response){
                 // input data
@@ -170,5 +179,5 @@ function takeSecondPln(element){
                 printChart(chartData);
                 }).fail(function(error) {
                 console.log(error);
-            }) // finish fail
+                }) // finish fail
 }
