@@ -67,8 +67,9 @@ jQuery(document).ready(function(){
                 jQuery('.text-error-curency').removeClass('case-error');
                 jQuery('.text-error-milion').removeClass('case-error');
             }
-            jQuery("button[value='60']").prop('disabled', true);
-            drawTheChart(currencyFrom,currencyTo,60)
+            jQuery("button[value='20']").prop('disabled', true);
+            console.log(currencyFrom);
+            drawTheChart(currencyFrom,currencyTo,20)
             
         // calculate the result and decimal to 2 place and rate to 4 place
         var rate = Math.round((jQuery('.'+currencyFrom).text())/(jQuery('.'+currencyTo).text())*10000)/10000;
@@ -97,6 +98,14 @@ jQuery(document).ready(function(){
         var changeTo = jQuery('.currencyTo').val();
         jQuery('.currencyTo').val(changeFrom);
         jQuery('.currencyFrom').val(changeTo);
+    })
+    jQuery(window).resize(function(event){
+//        if(innerWidth<950){
+//            console.log(jQuery('.currencyFrom :selected').data('currency'));
+//            drawTheChart((jQuery('.currencyFrom :selected').data('currency'),jQuery('.currencyTo :selected').data('currency'),20))
+//        }
+        //jQuery('.new-icon').text('');
+            
     })
     function drawTheChart (el1, el2, el3){
          if (el1=='PLN'){
