@@ -191,16 +191,20 @@ span {
 @media only screen and (max-width: 700px) {
   .form-group {
     width: 100%;
-    font-size: 1.5em; }
+    font-size: 1em; }
+  .main-size {
+    font-size: 1em; }
   .new-icon {
     background-repeat: no-repeat;
     border: none; }
   select {
-    font-size: 1em; }
+    font-size: 0.7em; }
   .to-hide {
     display: none; }
   .range-btn {
-    display: none; }
+    display: none; } }
+
+@media only screen and (max-width: 1000px) {
   .wrap-table {
     display: flex;
     flex-wrap: nowrap;
@@ -214,4 +218,8 @@ span {
     width: 50%;
     border: none;
     border: 1px solid black;
-    text-align: right; } }
+    text-align: right; }
+  .main-size {
+    font-size: 1em; }
+  .range-btn {
+    display: none; } }
