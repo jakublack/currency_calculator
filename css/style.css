@@ -187,7 +187,8 @@ span {
   justify-content: center; }
 
 .range-btn {
-  margin: 0 5px; }
+  margin: 0 5px;
+  font-size: 1em; }
 
 @media only screen and (max-width: 700px) {
   .form-group {
@@ -222,6 +223,6 @@ span {
     border: 1px solid black;
     text-align: right; }
   .main-size {
-    font-size: 1em; }
+    font-size: 0.6em; }
   .range-btn {
     display: none; } }
