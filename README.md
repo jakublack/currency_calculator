@@ -7,9 +7,9 @@ Site uses API from the National Bank of Poland on echange rates.
 Shows the most current average rates (to 1 PLN) and can convert between them. 
 
 Limitations: 
-	- converts only positive numbers,
-	- only amount from 1 to 1 million,
-	- can’t converte for this same currenty.
+- converts only positive numbers,
+- only amount from 1 to 1 million, 
+- can’t converte for this same currenty.
 
 When the conversion shows the chart of the average exchange rate of the period of 20 working days, however, is the ability to download data from the 60 and 120 working days.
 
