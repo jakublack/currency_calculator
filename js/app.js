@@ -68,7 +68,6 @@ jQuery(document).ready(function(){
                 jQuery('.text-error-milion').removeClass('case-error');
             }
             jQuery("button[value='20']").prop('disabled', true);
-            console.log(currencyFrom);
             drawTheChart(currencyFrom,currencyTo,20)
             
         // calculate the result and decimal to 2 place and rate to 4 place

@@ -10,7 +10,7 @@ var imagemin = require('gulp-imagemin'); //optymalizacja obrazkow
 var changed = require('gulp-changed'); 
 var htmlReplace = require('gulp-html-replace');
 var htmlMin = require('gulp-htmlmin'); // minifikacja html
-var del = requier('del'); //usunięcie dist 
+var del = require('del'); //usunięcie dist 
 var sequence = require('run-sequence'); // prosec dev
 
 
