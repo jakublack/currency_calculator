@@ -24,4 +24,8 @@ In this project I use technology:
 
 Font from Google-Fonts: Raleway.
 
+The appearance of the page: 
+
+Start page:
+![alt tab]()
 JG
