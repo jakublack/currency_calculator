@@ -6,6 +6,7 @@ Site uses API from the National Bank of Poland on echange rates.
 
 Shows the most current average rates (to 1 PLN) and can convert between them. 
 
+
 Limitations: 
 - converts only positive numbers,
 - only amount from 1 to 1 million, 
@@ -23,4 +24,12 @@ In this project I use technology:
 
 Font from Google-Fonts: Raleway.
 
+The appearance of the page: 
+
+Start page:
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/start.png)
+Result:
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/result.png)
+Mobile:
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/Mobile.png)
 JG
