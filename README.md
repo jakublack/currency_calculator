@@ -31,5 +31,7 @@ Start page:
 Result:
 ![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/result.png)
 Mobile:
+
 ![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/Mobile.png)
+
 JG
