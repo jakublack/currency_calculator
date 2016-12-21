@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
                                 var rateToNum = Math.round(parseFloat(array2[i].mid)*10000)/10000;
                                 $this.text(rateToNum);
                                 if (array2[i].mid>array1[i].mid){
-                                    $this.addClass('up');
+                                    $this.addClass('');
                                     }
                                 else{
                                     $this.addClass('down');
