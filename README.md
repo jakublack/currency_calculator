@@ -14,6 +14,8 @@ Limitations:
 
 When the conversion shows the chart of the average exchange rate of the period of 20 working days, however, is the ability to download data from the 60 and 120 working days.
 
+Color to the courses table -green if the rate increased from the previous, or red if dropped.
+
 In this project I use technology:
 - HTML,
 - JavaScript,
@@ -27,5 +29,15 @@ Font from Google-Fonts: Raleway.
 The appearance of the page: 
 
 Start page:
+<<<<<<< HEAD
 ![alt tab]()
+=======
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/start.png)
+Result:
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/result.png)
+Mobile:
+
+![alt tab](https://github.com/jakublack/currency_calculator/blob/master/img/Mobile.png)
+
+>>>>>>> fe6dd39ae058d6a441c1f8b92c30d10df9b4c8fe
 JG
