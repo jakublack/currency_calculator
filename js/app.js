@@ -7,9 +7,10 @@ jQuery(document).ready(function(){
                     //console.log(currencyToInner.hasClass('EUR'));
                     currencyToInner.each(function(){
                         for (i=0;i<array.length;i++){
-                            if ((jQuery(this).text())==array[i].code){
+                            var $this = jQuery(this);
+                            if ($this.text()==array[i].code){
                                 var rateToNum = Math.round(parseFloat(array[i].mid)*10000)/10000;
-                                jQuery(this).text(rateToNum);
+                                $this.text(rateToNum).css('color',"red");
                             }  //if
                         } // for
                     }) // function
