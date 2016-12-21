@@ -10,11 +10,12 @@ jQuery(document).ready(function(){
                             var $this = jQuery(this);
                             if ($this.text()==array2[i].code){
                                 var rateToNum = Math.round(parseFloat(array2[i].mid)*10000)/10000;
+                                $this.text(rateToNum);
                                 if (array2[i].mid>array1[i].mid){
-                                    $this.text(rateToNum).css('color','#33cc33');
+                                    $this.addClass('up');
                                     }
                                 else{
-                                    $this.text(rateToNum).css('color','#ff0000')
+                                    $this.addClass('down');
                                 }
                             }  //if
                         } // for
@@ -26,7 +27,7 @@ jQuery(document).ready(function(){
                     dataType: 'json'
             }).done(function(response){
                 // input data
-                jQuery('.dataToInput').text(response[0].effectiveDate);
+                jQuery('.dataToInput').text(response[1].effectiveDate);
                 searchCurrency(response);    
             }).fail(function(error) {
                console.log(error);

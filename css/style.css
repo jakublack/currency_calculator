@@ -51,7 +51,7 @@ body {
   padding-top: 2em; }
 
 .box {
-  width: 1050px;
+  width: 70%;
   margin: 0 auto;
   padding: 2em 0; }
 
@@ -90,7 +90,8 @@ body {
   flex-direction: column; }
 
 .flex-table:first-child {
-  width: 23%; }
+  width: 23%;
+  font-weight: 700; }
 
 .wrap-element {
   display: block;
@@ -107,12 +108,10 @@ body {
 .left-border {
   border-left: 0; }
 
-.currency {
-  float: right; }
-
 .main-size {
   border: 1px solid #395b77;
-  border-radius: 10px; }
+  border-radius: 10px;
+  font-size: 0.8em; }
 
 .text-center {
   text-align: center;
@@ -124,11 +123,15 @@ body {
 
 .all-form-calc {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-wrap: wrap; }
 
 .form-group {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 18%;
+  font-size: 1em; }
 
 .text-form {
   font-size: 1.5em;
@@ -144,27 +147,26 @@ body {
   display: block; }
 
 .amount-input {
-  height: 1.6em;
+  height: 2.8em;
   border-radius: 5px;
   text-align: center;
   font-size: 1em; }
 
 .all-select {
-  height: 3em; }
+  height: 3em;
+  font-size: 1em; }
 
 .main-btn {
-  width: 10em;
-  height: 2.2em;
+  height: 2.1em;
   border-radius: 5%;
-  font-size: 1em;
+  font-size: 1.4em;
   background-color: #395b77;
   border-color: #395b77;
   color: #fff; }
   .main-btn:hover {
     background-color: #273F53;
     border-color: #273F53;
-    cursor: pointer;
-    color: #fff; }
+    cursor: pointer; }
 
 .text-footer {
   font-size: 0.7em;
@@ -181,4 +183,48 @@ span {
   justify-content: center; }
 
 .range-btn {
-  margin: 0 5px; }
+  margin: 0 5px;
+  font-size: 1em; }
+
+.up {
+  color: #33cc33; }
+
+.down {
+  color: #ff0000; }
+
+@media only screen and (max-width: 700px) {
+  .form-group {
+    width: 100%;
+    font-size: 1em; }
+  .main-size {
+    font-size: 1em; }
+  .new-icon {
+    background-repeat: no-repeat;
+    border: none; }
+  select {
+    font-size: 0.7em; }
+  .to-hide {
+    display: none; }
+  .range-btn {
+    display: none; } }
+
+@media only screen and (max-width: 1100px) {
+  .wrap-table {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column; }
+  .flex-table:first-child {
+    width: 100%; }
+  .flex-table {
+    flex-direction: row;
+    width: 100%; }
+  .wrap-element {
+    width: 50%;
+    height: 100%;
+    border: none;
+    border: 1px solid black;
+    text-align: right; }
+  .main-size {
+    font-size: 0.6em; }
+  .range-btn {
+    display: none; } }
