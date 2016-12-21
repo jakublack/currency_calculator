@@ -2,22 +2,27 @@ jQuery(document).ready(function(){
 // function to compare code currency to my table with json file
     function searchCurrency(response){
                     
-                    var array = response[0].rates;
+                    var array1 = response[0].rates;
+                    var array2 = response[1].rates;
                     var currencyToInner = jQuery('.toChange');
-                    //console.log(currencyToInner.hasClass('EUR'));
                     currencyToInner.each(function(){
-                        for (i=0;i<array.length;i++){
+                        for (i=0;i<array2.length;i++){
                             var $this = jQuery(this);
-                            if ($this.text()==array[i].code){
-                                var rateToNum = Math.round(parseFloat(array[i].mid)*10000)/10000;
-                                $this.text(rateToNum).css('color',"red");
+                            if ($this.text()==array2[i].code){
+                                var rateToNum = Math.round(parseFloat(array2[i].mid)*10000)/10000;
+                                if (array2[i].mid>array1[i].mid){
+                                    $this.text(rateToNum).css('color','#33cc33');
+                                    }
+                                else{
+                                    $this.text(rateToNum).css('color','#ff0000')
+                                }
                             }  //if
                         } // for
                     }) // function
                 };//finish function searchCurrency
     function loadRate() {
             $.ajax({
-                    url: 'https://api.nbp.pl/api/exchangerates/tables/a/',
+                    url: 'https://api.nbp.pl/api/exchangerates/tables/a/last/2',
                     dataType: 'json'
             }).done(function(response){
                 // input data
