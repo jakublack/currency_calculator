@@ -6,6 +6,7 @@ Site uses API from the National Bank of Poland on echange rates.
 
 Shows the most current average rates (to 1 PLN) and can convert between them. 
 
+Link: https://jakublack.github.io/currency_calculator/
 
 Limitations: 
 - converts only positive numbers,
