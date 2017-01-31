@@ -37,15 +37,15 @@ jQuery(document).ready(function(){
     // action on click to exchange currency
     jQuery('.count-btn').on('click', function(event){
         
-        var amount = jQuery('.amount-input').val();
-        var result = 0;
-        var currencyFrom = jQuery('.currencyFrom :selected').data('currency');
-        var currencyTo = jQuery('.currencyTo :selected').data('currency');
-        var textErrorMilion = jQuery('.text-error-milion');
-        var hideResults = jQuery('.hide-result');
-        var chart = jQuery('.chart');
-        var textErrorCurrency = jQuery('.text-error-curency');
-        var textErrorAmount = jQuery('.text-error-amount');
+        var amount = jQuery('.amount-input').val(),
+            result = 0,
+            currencyFrom = jQuery('.currencyFrom :selected').data('currency'),
+            currencyTo = jQuery('.currencyTo :selected').data('currency'),
+            textErrorMilion = jQuery('.text-error-milion'),
+            hideResults = jQuery('.hide-result'),
+            chart = jQuery('.chart'),
+            textErrorCurrency = jQuery('.text-error-curency'),
+            textErrorAmount = jQuery('.text-error-amount');
         
             if (amount>1000000){
                 textErrorMilion.addClass('case-error');
